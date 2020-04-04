@@ -2,24 +2,37 @@ package it.polito.tdp.prova1;
 
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 
-public class FXMLController implements Initializable {
-    
+public class FXMLController {
+
     @FXML
-    private Label label;
-    
+    private ResourceBundle resources;
+
     @FXML
-    private void handleButtonAction(ActionEvent event) {
-        System.out.println("You clicked me!");
-        label.setText("Hello World!");
+    private URL location;
+
+    @FXML
+    private TextField txtNome;
+
+    @FXML
+    private TextField txtEta;
+
+    @FXML
+    private Button btnOk;
+
+    @FXML
+    private Label lblRisosta;
+
+    @FXML
+    void initialize() {
+        assert txtNome != null : "fx:id=\"txtNome\" was not injected: check your FXML file 'Scene.fxml'.";
+        assert txtEta != null : "fx:id=\"txtEta\" was not injected: check your FXML file 'Scene.fxml'.";
+        assert btnOk != null : "fx:id=\"btnOk\" was not injected: check your FXML file 'Scene.fxml'.";
+        assert lblRisosta != null : "fx:id=\"lblRisosta\" was not injected: check your FXML file 'Scene.fxml'.";
+
     }
-    
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
 }
