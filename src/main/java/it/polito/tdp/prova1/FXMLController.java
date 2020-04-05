@@ -31,8 +31,26 @@ public class FXMLController {
 	@FXML
 	void handleOk(ActionEvent event) {
 		String nome = txtNome.getText();
-		int eta = Integer.parseInt(txtEta.getText());
-		String risposta = (eta < 18 ? "Ciao " : "Buongiorno, ") + nome + "!";
+		if (nome.length() == 0) {
+			lblRisosta.setText("Devi inserire un nome!");
+			return;
+		}
+
+		String etaS = txtEta.getText();
+		if (etaS.length() == 0) {
+			lblRisosta.setText("Devi inserire l'età!");
+			return;
+		}
+
+		int eta;
+		try {
+			eta = Integer.parseInt(etaS);
+		} catch (NumberFormatException e) {
+			lblRisosta.setText("L'età deve essere un numero!");
+			return;
+		}
+		
+		String risposta = (eta < 18 ? "Ciao, " : "Buongiorno, ") + nome + "!";
 		lblRisosta.setText(risposta);
 	}
 
