@@ -34,7 +34,7 @@
             </HBox>
             <HBox alignment="TOP_RIGHT" spacing="5.0">
                <children>
-                  <Button fx:id="btnOk" mnemonicParsing="false" text="Ok" />
+                  <Button fx:id="btnOk" mnemonicParsing="false" onAction="#handleOk" text="Ok" />
                </children>
             </HBox>
             <Label fx:id="lblRisosta" />
